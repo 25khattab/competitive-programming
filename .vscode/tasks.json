@@ -5,7 +5,8 @@
         "label": "Compile and run",
         "type": "shell",
         "command": "",
-        "args": ["g++",
+        "args": [
+          "g++",
           "${relativeFile}",
           "-o",
           "${fileDirname}\\${fileBasenameNoExtension}",
@@ -48,7 +49,9 @@
         ],
         "options": {
           "cwd": "C:\\MinGW64\\bin"
-        }
-      },
+        },
+        "problemMatcher": [],
+        "group": "build"
+      }
     ]
   }

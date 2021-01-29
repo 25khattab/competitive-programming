@@ -24,7 +24,7 @@ ll fact(int n)
 }
 int prime[32] = {0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1};
 int ans[20], n, cases = 1;
-
+;
 bool Valid[20];
 void solve(int idx, int lst)
 {
