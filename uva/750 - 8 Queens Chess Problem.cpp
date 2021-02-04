@@ -8,55 +8,34 @@ using namespace std;
 #define ROF(i, s, e) for (int i = e - 1; i >= s; i--)
 #define mk(x, y) make_pair(x, y)
 int const sz = 2e5;
-int const oo = 1e9;
+const int oo = 0x3f3f3f3f;
+const double EPS = 1e-6;
 ll const MOD = 1e9 + 7;
-struct ans
-{
-    int x;
-};
 ll gcd(ll a, ll b) { return b == 0 ? a : gcd(b, a % b); }
 ll lcm(ll a, ll b) { return a * b / gcd(a, b); }
-ll fact(ll n)
-{
-    if (n == 1)
-        return 1;
-    return n * fact(n - 1);
-}
-int notSafe[8][8];
-int ans[8];
-int queens[8][8];
-int cnt = 1;
-int a, b;
-bool cwpq(int r, int c)
-{
-    FOR(i, 0, r)
-    {
-        if (ans[i] == c || abs(r - i) == abs(ans[i] - c))
-            return 0;
-    }
-    return 1;
-}
-void solve(int row)
-{
-    if (row == 8)
-    {
-        if (ans[b] == a)
-        {
-            cout <<setw(2)<< cnt++ << "      ";
-            FOR(i, 0, 8)
-                cout << ans[i] + 1 << " \n"[i==7];
+int tc, a, b, cnt;
+int row[8];
 
-        }
+bool place(int r, int c)
+{
+    for (int prev = 0; prev < r; prev++) 
+        if (row[prev] == c || (abs(row[prev] - c) == abs(prev - r)))
+            return false; 
+    return true;
+}
+void solve(int c)
+{
+    if (c == 8 && row[b] == a)
+    {
+        cout << setw(2) << cnt++ << "      ";
+        FOR(i, 0, 8)
+        cout << row[i] + 1 << " \n"[i == 7];
         return;
     }
-
-    for (int i = 0; i < 8; i++)
+    for (int r = 0; r < 8; r++)
     {
-        if (!cwpq(row, i))
-            continue;
-        ans[row] = i;
-        solve(row + 1);
-        ans[row] = -1;
+        if (place(c, r))
+            row[c] = r, solve(c + 1);
     }
 }
 
@@ -64,16 +43,18 @@ int main()
 {
     ios::sync_with_stdio(0);
     cin.tie(0);
-    int t;
-    cin >> t;
-    while (t--)
+    cout.tie(0);
+    cin >> tc;
+    while (tc--)
     {
-        cnt=1;
+        cnt = 1;
+        memset(row, 0, sizeof row);
         cin >> a >> b;
         --a, --b;
         cout << "SOLN       COLUMN\n";
         cout << " #      1 2 3 4 5 6 7 8\n\n";
         solve(0);
-        if(t)cout<<endl;
+        if (tc)
+            cout << endl;
     }
 }
