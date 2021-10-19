@@ -1,35 +1,32 @@
 {
-	"cp-code": {
-		"prefix": "omar",
-		"body": [
-			"#include <bits/stdc++.h>\r",
-			"\r",
-			"using namespace std;\r",
-			"#define endl \"\\n\"\r",
-			"#define ll long long\r",
-			"#define ull unsigned long long\r",
-			"#define FOR(i, s, e) for (int i = s; i < e; i++)\r",
-			"#define ROF(i, s, e) for (int i = e - 1; i >= s; i--)\r",
-			"#define mk(x, y) make_pair(x, y)\r",
-			"int const sz = 2e5;\r",
-			"const int oo = 0x3f3f3f3f;\r",
-			"const double EPS = 1e-6;\r",
-			"ll const MOD = 1e9 + 7;\r",
-			"ll gcd(ll a, ll b) { return b == 0 ? a : gcd(b, a % b); }\r",
-			"ll lcm(ll a, ll b) { return a * b / gcd(a, b); }\r",
-			"int tc;\r",
-			"void solve()\r",
-			"{\r",
-			"}\r",
-			"\r",
-			"int main()\r",
-			"{\r",
-			"    ios::sync_with_stdio(0);\r",
-			"    cin.tie(0);\r",
-			"    cout.tie(0);\r",
-			"}\r",
-			""
-		],
-		"description": "omar's main code "
-	}
+  "cp-code": {
+    "prefix": "omar",
+    "body": [
+      "#include <bits/stdc++.h>\r",
+      "\r",
+      "using namespace std;\r",
+      "#define endl \"\\n\"\r",
+      "#define ll long long\r",
+      "#define mk(x, y) make_pair(x, y)\r",
+      "const int oo = 0x3f3f3f3f;\r",
+      "const double EPS = 1e-6;\r",
+      "ll const MOD = 1e9 + 7;\r",
+      "ll gcd(ll a, ll b) { return b == 0 ? a : gcd(b, a % b); }\r",
+      "ll lcm(ll a, ll b) { return a * b / gcd(a, b); }\r",
+      "int const N=1e5+2;",
+      "int tc;\r",
+      "void solve()\r",
+      "{\r",
+      "}\r",
+      "\r",
+      "int main()\r",
+      "{\r",
+      "    ios::sync_with_stdio(0);\r",
+      "    cin.tie(0);\r",
+      "    cout.tie(0);\r",
+      "}\r",
+      ""
+    ],
+    "description": "omar's main code "
+  }
 }
