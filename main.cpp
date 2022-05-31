@@ -13,6 +13,33 @@ int const N = 1e5 + 2;
 int tc;
 void solve()
 {
+    int n;
+    cin >> n;
+    vector<int> v(n);
+    map<int, vector<int>> ans;
+    for (int i = 0; i < n; i++)
+    {
+        cin >> v[i];
+    }
+    int sz = 0;
+    int flag = -1;
+    int x = 0;
+    for (int i = 0; i < n; i++)
+    {
+        ans[v[i]].push_back(i+1);
+    }
+
+    for (auto i : ans)
+    {
+        if(i.second.size()==1){
+            cout<<-1<<endl;
+            return;
+        }
+        cout<< i.second[i.second.size()-1]<<" ";
+        for (int it=0; it<i.second.size()-1;it++ )
+            cout << i.second[it] << " ";
+    }
+    cout << endl;
 }
 
 int main()
@@ -20,40 +47,9 @@ int main()
     ios::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
-
-    while (cin >> tc && tc)
+    cin >> tc;
+    while (tc--)
     {
-        string number = "";
-        while (tc != 0)
-        {
-            if (tc % 2 == 0)
-                number += '0';
-            else
-                number += '1';
-            tc /= 2;
-        }
-        reverse(number.begin(), number.end());
-        string a = "", b = "";
-        bool flag = 0;
-        for (int i = number.size() - 1; i >= 0; i--)
-        {
-            if (number[i] == '0')
-                a += '0', b += '0';
-            else
-            {
-                if (!flag)
-                {
-                    a += '1', b += '0';
-                }
-                else
-                {
-                    a += '0', b += '1';
-                }
-                flag = !flag;
-            }
-        }
-        reverse(a.begin(), a.end());
-        reverse(b.begin(), b.end());
-        cout<<stoi(a,0,2)<<" "<<stoi(b,0,2)<<endl;
+        solve();
     }
 }
